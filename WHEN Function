@@ -1,0 +1,11 @@
+## This SQL query selects product names from the 'customer_purchase' dataset in the 'sandbox-project1st.customer_data' database and introduces a new column labeled 'cleaned_product_name.' 
+It employs the WHEN function to conditionally modify product names, converting 'fan' into 'fun,' 'lamp' into 'lump,' and leaving all other product names unaltered.
+
+SELECT
+product,
+CASE
+WHEN product = 'fan' THEN 'fun'
+WHEN product = 'lamp' THEN 'lump'
+ELSE product
+END AS cleaned_product_name
+FROM `sandbox-project1st.customer_data. customer_purchase`
