@@ -1,0 +1,9 @@
+## This SQL query selects data from the 'customer_purchase' dataset within the 'sandbox-project1st.customer_data' database. 
+It uses the CONCAT function to combine the values from the 'product_code' and 'product_color' columns into a new column labeled as new_product_code. The query filters the results to include only rows where the 'product' is equal to 'couch'. 
+As a result, you'll obtain a list of concatenated product codes and colors for couch purchases
+
+SELECT
+CONCAT(product_code,product_color) AS new_product_code
+FROM `sandbox-project1st.customer_data. customer_purchase`
+WHERE
+product = 'couch'
