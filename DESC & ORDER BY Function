@@ -1,0 +1,9 @@
+## This SQL query retrieves the 'purchase_price' column from the 'customer_purchase' dataset within the 'sandbox-project1st.customer_data' database. 
+It then sorts the results in descending order based on the 'purchase_price DESC,' with the highest purchase prices appearing at the top of the result set. 
+This allows you to see the purchase prices in decreasing order, helping to identify the most expensive purchases.
+
+SELECT
+purchase_price
+FROM `sandbox-project1st.customer_data. customer_purchase`
+ORDER BY
+purchase_price DESC
