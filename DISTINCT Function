@@ -1,0 +1,8 @@
+## This SQL query retrieves unique values from the 'drive_wheels' column in the 'sandbox-project1st.cars.car_info' table. 
+Additionally, it calculates the length of each 'drive_wheels' value using the LENGTH function and presents it as 'string_length' in the result set. 
+As a result, you'll get a list of distinct drive wheel types along with their corresponding string lengths.
+
+SELECT 
+DISTINCT drive_wheels,
+LENGTH(drive_wheels) AS string_length
+FROM `sandbox-project1st.cars.car_info`
