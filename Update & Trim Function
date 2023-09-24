@@ -1,0 +1,9 @@
+## This SQL UPDATE statement modifies the 'drive_wheels' column in the 'sandbox-project1st.cars.car_info' table. 
+It uses the TRIM function to remove any leading or trailing spaces from the values in the 'drive_wheels' column. 
+The update is applied to all rows in the table, as indicated by the 'WHERE TRUE' condition, ensuring that all drive wheel values are trimmed of any unnecessary spaces.
+
+UPDATE
+`sandbox-project1st.cars.car_info`
+SET
+drive_wheels = TRIM(drive_wheels)
+WHERE TRUE
