@@ -1,0 +1,9 @@
+## This SQL code retrieves the minimum and maximum compression ratios from the car_info table in the sandbox-project1st.cars dataset. 
+It excludes records with a compression ratio of 70 using the WHERE clause, and the results are aliased as min_compression_ration and max_compression_ration for clarity.
+
+SELECT
+MIN(compression_ratio) AS min_compression_ration,
+MAX(compression_ratio) AS max_compression_ration
+FROM `sandbox-project1st.cars.car_info`
+WHERE
+compression_ratio <> 70
