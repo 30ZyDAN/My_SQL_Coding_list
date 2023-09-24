@@ -1,0 +1,7 @@
+## This SQL DELETE statement removes records from the 'sandbox-project1st.cars.car_info' table where the 'compression_ratio' is equal to 70. 
+It effectively deletes rows with a compression ratio of 70 from the table.
+
+DELETE
+`sandbox-project1st.cars.car_info`
+WHERE
+compression_ratio = 70
