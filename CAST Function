@@ -1,0 +1,10 @@
+## This SQL query retrieves the 'purchase_price' column from the 'customer_purchase' dataset within the 'sandbox-project1st.customer_data' database. 
+It uses the CAST function to convert the 'purchase_price' values to a numeric data type, specifically FLOAT64. 
+Once the values are cast to this data type, the query proceeds to sort the results in descending order based on the CAST(purchase_price AS FLOAT64), 
+presenting the highest purchase prices at the top of the result set.
+
+SELECT
+CAST (purchase_price AS FLOAT64)
+FROM `sandbox-project1st.customer_data. customer_purchase`
+ORDER BY
+CAST (purchase_price AS FLOAT64) DESC
