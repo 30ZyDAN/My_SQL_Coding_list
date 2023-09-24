@@ -1,0 +1,9 @@
+## This SQL query uses the COUNT(*) function to calculate the number of rows that meet the condition specified in the WHERE clause. 
+Specifically, it counts the rows in the 'sandbox-project1st.cars.car_info' table where the 'compression_ratio' is equal to 70. 
+The result, labeled as num_of_rows_to_delete, represents the total count of rows that are candidates for deletion due to having a compression ratio of 70.
+
+SELECT
+COUNT(*) AS num_of_rows_to_delete
+FROM `sandbox-project1st.cars.car_info`
+WHERE
+compression_ratio = 70
