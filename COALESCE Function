@@ -1,0 +1,7 @@
+## This SQL query retrieves data from the 'customer_purchase' dataset within the 'sandbox-project1st.customer_data' database. 
+It utilizes the COALESCE function to create a new column called product_info. The purpose of this function is to return the first non-null value encountered from the 'product' and 'product_code' columns for each row. If 'product' is null, it will use 'product_code' as the value in the 'product_info' column. 
+This query helps consolidate and provide product information effectively, handling cases where one of the columns may be null.
+
+SELECT
+COALESCE(product,product_code) AS product_info
+FROM `sandbox-project1st.customer_data. customer_purchase`
