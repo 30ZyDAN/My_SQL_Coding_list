@@ -1,0 +1,44 @@
+-- Copying data to a new table 'mydataset.avocados' from 'avocado_base'
+CREATE TABLE `mydataset.avocados`
+AS (
+    SELECT
+        *
+    FROM `mydataset.avocado_base`
+);
+
+-- Creating a partitioned table 'mydataset.avocados_partitioned' based on the 'Year' column
+-- The data is partitioned into ranges from 2015 to 2022
+CREATE TABLE `mydataset.avocados_partitioned`
+PARTITION BY RANGE_BUCKET(Year, GENERATE_ARRAY(2015,2022,1))
+AS (
+    SELECT
+        *
+    FROM `mydataset.avocado_base`
+);
+
+-- Creating a partitioned and clustered table 'mydataset.avocados_clustered'
+-- Partitioning based on 'Year' column and clustering by 'type' column
+CREATE TABLE `mydataset.avocados_clustered`
+PARTITION BY RANGE_BUCKET(Year, GENERATE_ARRAY(2015,2022,1))
+CLUSTER BY type
+AS (
+    SELECT
+        *
+    FROM `mydataset.avocado_base`
+);
+
+Explanation:
+mydataset.avocados Table:
+
+A new table is created (mydataset.avocados) by copying all data from the existing table (avocado_base). This table holds an identical dataset.
+mydataset.avocados_partitioned Table:
+
+This table is designed with partitioning based on the 'Year' column.
+The data is partitioned into ranges from 2015 to 2022 using RANGE_BUCKET.
+The goal is to improve query performance by organizing data into distinct partitions based on the 'Year'.
+mydataset.avocados_clustered Table:
+
+Similar to avocados_partitioned, this table is also partitioned based on the 'Year' column.
+Additionally, it is clustered by the 'type' column. Clustering physically organizes the data within each partition based on 'type'.
+This setup aims to enhance query performance by reducing the amount of data scanned through effective organization.
+These SQL commands create different tables, each employing a distinct strategy to manage and optimize avocado data. They serve different purposes, from simple replication to partitioning and clustering for improved query performance and data organization.
