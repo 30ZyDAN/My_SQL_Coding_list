@@ -1,0 +1,33 @@
+-- Combine data from three different tables using UNION ALL
+
+-- Retrieve all rows and columns from 'market_1' table
+SELECT *
+FROM `data-pipeline-project402901.fiber.market_1`
+
+-- Combine the results with all rows and columns from 'market_2' table using UNION ALL
+UNION ALL
+
+-- Add the results from 'market_3' table to the union of 'market_1' and 'market_2'
+SELECT *
+FROM `data-pipeline-project402901.fiber.market_2`
+
+-- Finally, combine all rows from 'market_1', 'market_2', and 'market_3'
+UNION ALL
+
+-- Retrieve all rows and columns from 'market_3' table and append them to the previous result
+SELECT *
+FROM `data-pipeline-project402901.fiber.market_3`;
+
+
+Explanation:
+The UNION ALL operator is used to combine the results of multiple SELECT statements into a single result set. It appends all rows from each query, including duplicates if they exist.
+
+In this SQL code, we are performing a UNION ALL operation on three different tables: 'market_1', 'market_2', and 'market_3'.
+
+For each table, we use a SELECT * statement to retrieve all columns and rows.
+
+After the first SELECT statement, we use the UNION ALL operator to append the results from 'market_2'. This creates a union of the data from 'market_1' and 'market_2'.
+
+In the third section, we use another UNION ALL operator to add the results from 'market_3' to the previously combined data. This results in the union of data from all three tables: 'market_1', 'market_2', and 'market_3'.
+
+This SQL code is useful when you want to combine data from multiple tables with the same structure. It's important to note that UNION ALL retains duplicate rows, and the order of the tables in the UNION ALL statement determines the order of the results in the combined dataset.
